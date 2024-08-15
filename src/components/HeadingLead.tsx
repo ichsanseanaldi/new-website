@@ -13,7 +13,7 @@ interface HeadingLeadProps{
 
 export default function HeadingLead({children,...props}:HeadingLeadProps) {
   return (
-    <span className={`${bodoni_font.className} text-6xl tracking-tighter uppercase mx-1 ${props.className}`}>
+    <span className={`${bodoni_font.className} text-5xl tracking-tighter uppercase mx-1 ${props.className}`}>
         {children}
     </span>
   )
