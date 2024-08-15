@@ -1,8 +1,8 @@
-import { Bodoni_Moda } from 'next/font/google'
+import { Cinzel, Nanum_Myeongjo, Pacifico } from 'next/font/google'
 import React from 'react'
 
-const bodoni_font = Bodoni_Moda({
-    weight:['400','500','600','700','800','900'],
+const bodoni_font = Cinzel({
+    weight:['400'],
     subsets:['latin'],
     display:'swap'
 })

@@ -12,18 +12,23 @@ import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 const poppins_font = Poppins({
     subsets: ['latin'],
     weight: ['900', '800', '700', '400', '500', '600', '300', '200'],
-    style: ['italic', 'normal']
+    style: ['italic', 'normal'],
+    display:'swap'
 })
 
 const bebas_neue_font = Bebas_Neue({
     subsets: ['latin'],
     weight: ['400'],
-    style: ['normal']
+    style: ['normal'],
+    display:'swap'
+
 })
 
 const lobster_font = Lobster({
     subsets: ['latin'],
-    weight: ['400']
+    weight: ['400'],
+    display:'swap'
+
 })
 
 export default function Main() {
@@ -57,7 +62,7 @@ export default function Main() {
                             <span className={`${lobster_font.className} text-5xl`}>Well, Kind of...</span>
                             <span className="text-4xl">, cause most of the time i deal with frontend dev stuff</span>
                             <span className={`text-5xl inline-block tracking-widest ${bebas_neue_font.className}`}>, which</span>
-                            <span className="text-3xl inline-block font-semibold italic">Technically makes me a</span>
+                            <span className="text-3xl inline-block font-light">Technically makes me a</span>
                             <span className={`text-3xl inline-block tracking-wider font-semibold uppercase ml-2 ${poppins_font.className}`}>Frontend Developer</span>
                             <span className={`text-4xl inline-block font-semibold uppercase ${bebas_neue_font.className}`}>
                                 , But because i thought being an
@@ -80,7 +85,7 @@ export default function Main() {
                         <div className="flex space-x-3">
                             {
                                 social_media.map((sm, i) => (
-                                    <Link href={sm.url} target="_blank" className="group">
+                                    <Link href={sm.url} target="_blank" className="group" key={i}>
                                         <div dangerouslySetInnerHTML={{ __html: sm.svg }} className="fill-white group-hover:fill-yellow-500 duration-200"></div>
                                     </Link>
                                 ))
