@@ -3,7 +3,8 @@ import React from 'react'
 
 const bodoni_font = Bodoni_Moda({
     weight:['400','500','600','700','800','900'],
-    subsets:['latin']   
+    subsets:['latin'],
+    display:'swap'
 })
 
 interface HeadingLeadProps{
