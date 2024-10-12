@@ -2,7 +2,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import {Analytics} from '@vercel/analytics/react';
+// import {Analytics} from '@vercel/analytics/react';
 import { shared_metadata } from '../addons/shared-metadata'
 
 const inter = Inter({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir='ltr'>
       <body className={`flex justify-between min-h-dvh w-full max-w-[1000px] mx-auto bg-black ${inter.className} p-10`}>
-        <Analytics/>
+        {/* <Analytics/> */}
         <div className='w-full'>
           {children}
         </div>
