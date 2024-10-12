@@ -33,7 +33,7 @@ const lobster_font = Lobster({
 
 export default function Main() {
     return (
-        <div className="h-full w-full flex items-center flex-col justify-start mt-28 mb-2 lg:mb-32 select-none">
+        <div className="h-full w-full flex items-center flex-col justify-start mt-28 lg:my-2  select-none">
             <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
