@@ -33,7 +33,7 @@ const lobster_font = Lobster({
 
 export default function Main() {
     return (
-        <div className="h-full w-full flex items-center flex-col justify-start mt-10 mb-32 select-none">
+        <div className="h-full w-full flex items-center flex-col justify-start mt-28 mb-2 lg:mb-32 select-none">
             <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
@@ -43,12 +43,12 @@ export default function Main() {
                 className="w-full h-full fixed inset-0 z-[-1]"
                 particleColor="#FFFFFF"
             />
-            <CardContainer className="inter-var" >
+            {/* <CardContainer className="inter-var" >
                 <CardBody className=" relative group/card w-full" >
                     <CardItem
                         translateZ="20"
                         className=""
-                    >
+                    > */}
                         <div className="text-yellow-500">
                             <span className={`text-6xl inline-block tracking-tight font-bold uppercase ${poppins_font.className}`}>Hello There!</span>
                             <span className="text-2xl inline-block font-bold  tracking-[1rem] mx-2 uppercase">My Name Is</span>
@@ -85,9 +85,9 @@ export default function Main() {
                                 <span className='text-xs mx-1'>Star Wars intro lookin, ahh!</span>
                             
                         </div>
-                    </CardItem>
+                    {/* </CardItem>
                 </CardBody>
-            </CardContainer>
+            </CardContainer> */}
             <div className="fixed p-3 rounded-sm top-10 bg-black space-y-0 space-x-3 flex lg:right-10 lg:top-[50%] lg:bottom-[50%]  lg:flex-col lg:space-y-3 lg:space-x-0">
                 {
                     social_media.map((sm, i) => (
