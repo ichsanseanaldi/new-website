@@ -14,7 +14,7 @@ import { PinContainer } from './ui/3d-pin';
 import Image from 'next/image';
 
 const star_wars_font = localFont({
-    src: '.././assets/StarJhol.ttf',
+    src: '.././assets/Starjhol.ttf',
     display: 'swap'
 })
 
