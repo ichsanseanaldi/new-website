@@ -33,7 +33,7 @@ export default function Main() {
             <div className={cn("text-yellow-500 perspective max-h-[500px] overflow-scroll pt-80 px-10 subpixel-antialiased")}>
                 <h1 className={cn('text-5xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
                 <p className='text-justify'>
-                    Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since "agnostic-stack" has a nice ring to it, I decided to embrace it.
+                    Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it.
                     Aside from my primary work in frontend development, I have also delved into backend technologies.
                 </p>
                 <br />
