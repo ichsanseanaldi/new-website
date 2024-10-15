@@ -33,7 +33,7 @@ export default function Main() {
             <div className={cn("text-yellow-500 perspective max-h-[500px] overflow-scroll pt-80 px-10 subpixel-antialiased")}>
                 <h1 className={cn('text-5xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
                 <p className='text-justify'>
-                    Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it.
+                    Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it—just like how a Jedi embraces the Force.
                     Aside from my primary work in frontend development, I have also delved into backend technologies.
                 </p>
                 <br />
@@ -42,7 +42,7 @@ export default function Main() {
                 </p>
                 <br />
                 <p className='text-justify'>
-                    Additionally, I thrive in performance optimization, ensuring that users enjoy the best possible experience, whether by speeding up frontend applications by reducing its bundle cost or optimizing backend processes for scalability.
+                    Additionally, I thrive in performance optimization, ensuring that users enjoy the best possible experience, whether by speeding up frontend applications by reducing its bundle cost or optimizing backend processes for scalability. After all, no one wants a slow ship when the galaxy is at stake.
                 </p>
                 <br />
                 <p className='text-justify'>
@@ -54,7 +54,7 @@ export default function Main() {
                 </p>
                 <br />
                 <p className='text-justify'>
-                    I&apos;m currently working on awesome project, but if you need something, feel free to contact me using the links below!
+                    I&apos;m currently working on awesome project, but if you need something, feel free to contact me using the links below! May the Force be with you!
                 </p>
             </div>
             <div className="fixed p-3 rounded-sm bottom-10 bg-black space-y-0 space-x-3 flex">
