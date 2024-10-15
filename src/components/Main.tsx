@@ -30,30 +30,30 @@ export default function Main() {
                 className="w-full h-full fixed inset-0 z-[-1]"
                 particleColor="#FFFFFF"
             />
-            <div className={cn("text-yellow-500 perspective max-h-[500px] overflow-scroll pt-80 px-10 subpixel-antialiased")}>
+            <div className={cn("text-yellow-500 perspective max-h-[500px] overflow-scroll py-52 px-10 subpixel-antialiased")}>
                 <h1 className={cn('text-5xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it—just like how a Jedi embraces the Force.
                     Aside from my primary work in frontend development, I have also delved into backend technologies.
                 </p>
                 <br />
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     The tools I&apos;ve worked with in my workplace include: <i>Next.js, Laravel, Nest.js, Docker, RabbitMQ, GraphQL, Postgres, Redis, and Tailwind</i>. While I may not be a certified expert in each of these, I am confident in my ability to navigate them and solve problems efficiently.
                 </p>
                 <br />
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     Additionally, I thrive in performance optimization, ensuring that users enjoy the best possible experience, whether by speeding up frontend applications by reducing its bundle cost or optimizing backend processes for scalability. After all, no one wants a slow ship when the galaxy is at stake.
                 </p>
                 <br />
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     Interestingly, I also have a publication in the field of gamification (which you can look up), I&apos;ve also had teaching experience in a vocational school, which has helped shape my ability to communicate complex topics in simple ways.
                 </p>
                 <br />
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     I am always eager to learn and adapt to different environments, constantly pushing myself to grow and become the best professional I can be in my field.
                 </p>
                 <br />
-                <p className='text-justify'>
+                <p className='text-start md:text-justify'>
                     I&apos;m currently working on awesome project, but if you need something, feel free to contact me using the links below! May the Force be with you!
                 </p>
             </div>
