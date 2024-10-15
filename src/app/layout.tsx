@@ -8,7 +8,8 @@ import { shared_metadata } from '../addons/shared-metadata'
 const inter = Inter({
   weight:['100','200','400','600','900'],
   subsets: ['latin'],
-  preload:true
+  preload:true,
+  style:['normal']
 })
 
 export const metadata: Metadata = {

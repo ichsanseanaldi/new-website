@@ -4,91 +4,60 @@ import React from 'react'
 import { social_media } from "@/addons/social";
 import HeadingLead from "@/components/HeadingLead";
 import CustomLink from "@/components/Link";
-import { Bebas_Neue, Lobster, Poppins } from "next/font/google";
+import { Bebas_Neue, Inter, Lobster, Poppins } from "next/font/google";
 import Link from "next/link";
 import { SparklesCore } from './ui/sparkles';
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
+import localFont from 'next/font/local'
+import { cn } from '@/lib/utils';
+import { PinContainer } from './ui/3d-pin';
+import Image from 'next/image';
 
-const poppins_font = Poppins({
-    subsets: ['latin'],
-    weight: ['900', '800', '700', '400', '500', '600', '300', '200'],
-    style: ['italic', 'normal'],
+const star_wars_font = localFont({
+    src: '.././assets/StarJhol.ttf',
     display: 'swap'
-})
-
-const bebas_neue_font = Bebas_Neue({
-    subsets: ['latin'],
-    weight: ['400'],
-    style: ['normal'],
-    display: 'swap'
-
-})
-
-const lobster_font = Lobster({
-    subsets: ['latin'],
-    weight: ['400'],
-    display: 'swap'
-
 })
 
 export default function Main() {
     return (
-        <div className="h-full w-full flex items-center flex-col justify-start mt-28 lg:my-2  select-none">
+        <div className="h-full max-w-[500px] flex items-center flex-col justify-start lg:my-2 select-none mx-auto">
             <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
                 minSize={0.6}
-                maxSize={1.4}
-                particleDensity={100}
+                maxSize={1}
+                particleDensity={200}
                 className="w-full h-full fixed inset-0 z-[-1]"
                 particleColor="#FFFFFF"
             />
-            {/* <CardContainer className="inter-var" >
-                <CardBody className=" relative group/card w-full" >
-                    <CardItem
-                        translateZ="20"
-                        className=""
-                    > */}
-                        <div className="text-yellow-500">
-                            <span className={`text-6xl inline-block tracking-tight font-bold uppercase ${poppins_font.className}`}>Hello There!</span>
-                            <span className="text-2xl inline-block font-bold  tracking-[1rem] mx-2 uppercase">My Name Is</span>
-                            <span className={`text-7xl inline-block tracking-tighter uppercase font-light mx-1 ${poppins_font.className}`}>
-                                Ichsan Seanaldi Permana
-                            </span>
-                            <span className={`text-6xl inline-block mx-2 ${bebas_neue_font.className}`}>i am</span>
-                            <HeadingLead>
-                                an <em className="text-3xl tracking-widest">agnostic-stack</em> software developer
-                            </HeadingLead>
-                            <span className={`${lobster_font.className} text-5xl`}>Well, Kind of...</span>
-                            <span className="text-4xl">, cause most of the time i deal with frontend dev stuff</span>
-                            <span className={`text-5xl inline-block tracking-widest ${bebas_neue_font.className}`}>, which</span>
-                            <span className="text-3xl inline-block font-light">Technically makes me a</span>
-                            <span className={`text-3xl inline-block tracking-wider font-semibold uppercase ml-2 ${poppins_font.className}`}>Frontend Developer</span>
-                            <span className={`text-4xl inline-block font-semibold uppercase ${bebas_neue_font.className}`}>
-                                , But because i thought being an
-                            </span>
-                            <span className={`text-4xl inline-block font-semibold uppercase mx-2 ${lobster_font.className}`}>
-                                &quot;agnostic-stack&quot;
-                            </span>
-                            <span className="text-xl inline-block uppercase tracking-tight font-bold italic">Sounds really</span>
-                            <HeadingLead>Fancy</HeadingLead>
-                            <span className="text-xl inline-block mx-1">So i just put it up there.</span>
-                            <span className="text-5xl block mx-1 font-extrabold">AND SO.....</span>
-                            <span className="text-xl inline-block mx-1">
-                                From here now on you wont be having a headache by reading this text with several font combination, 
-                                anyway i have also worked with some backend stuff as well, 
-                                here are the tools i have used over in my workplace 
-                                <b> (but not limited to)</b>: next.js, laravel, nest.js, docker, rabbitMQ, postgres, redis, tailwind. 
-                                I am no super duper <span className='line-through'>mart</span> expert in any of them, but i can find my way around properly if needed be. 
-                                Thanks for spending your time, have a good one!
-                            </span>
-                                <span className='text-xs mx-1'>Star Wars intro lookin, ahh!</span>
-                            
-                        </div>
-                    {/* </CardItem>
-                </CardBody>
-            </CardContainer> */}
-            <div className="fixed p-3 rounded-sm top-10 bg-black space-y-0 space-x-3 flex lg:right-10 lg:top-[50%] lg:bottom-[50%]  lg:flex-col lg:space-y-3 lg:space-x-0">
+            <div className={cn("text-yellow-500 perspective max-h-[500px] overflow-scroll pt-80 px-10 subpixel-antialiased")}>
+                <h1 className={cn('text-5xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
+                <p className='text-justify'>
+                    Is my name. I am an agnostic-stack software developer, well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since "agnostic-stack" has a nice ring to it, I decided to embrace it.
+                    Aside from my primary work in frontend development, I have also delved into backend technologies.
+                </p>
+                <br />
+                <p className='text-justify'>
+                    The tools I&apos;ve worked with in my workplace include: <i>Next.js, Laravel, Nest.js, Docker, RabbitMQ, GraphQL, Postgres, Redis, and Tailwind</i>. While I may not be a certified expert in each of these, I am confident in my ability to navigate them and solve problems efficiently.
+                </p>
+                <br />
+                <p className='text-justify'>
+                    Additionally, I thrive in performance optimization, ensuring that users enjoy the best possible experience, whether by speeding up frontend applications by reducing its bundle cost or optimizing backend processes for scalability.
+                </p>
+                <br />
+                <p className='text-justify'>
+                    Interestingly, I also have a publication in the field of gamification (which you can look up), I&apos;ve also had teaching experience in a vocational school, which has helped shape my ability to communicate complex topics in simple ways.
+                </p>
+                <br />
+                <p className='text-justify'>
+                    I am always eager to learn and adapt to different environments, constantly pushing myself to grow and become the best professional I can be in my field.
+                </p>
+                <br />
+                <p className='text-justify'>
+                    I&apos;m currently working on awesome project, but if you need something, feel free to contact me using the links below!
+                </p>
+            </div>
+            <div className="fixed p-3 rounded-sm bottom-10 bg-black space-y-0 space-x-3 flex">
                 {
                     social_media.map((sm, i) => (
                         <Link href={sm.url} target="_blank" className="group" key={i}>
