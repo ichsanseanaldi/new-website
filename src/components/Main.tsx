@@ -25,18 +25,18 @@ export default function Main() {
     const [isPerspective, setIsPerspective] = useState<boolean>(false)
 
     return (
-        <div className="h-full max-w-[600px] flex items-center flex-col justify-start lg:my-2 select-none mx-auto  space-y-24">
+        <div className={cn("h-full max-w-[600px] flex items-center flex-col justify-start lg:my-2 select-none mx-auto", isPerspective && 'space-y-24')}>
             <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
                 minSize={0.5}
                 maxSize={1}
                 particleDensity={50}
-                className="w-full h-full fixed inset-0 z-[-1] border-t--"
+                className="w-full h-full fixed inset-0 z-[-1]"
                 particleColor="#FFFFFF"
             />
-            <div className={cn("text-yellow-400 max-h-[500px] overflow-scroll py-52 px-10 subpixel-antialiased duration-500", isPerspective && 'perspective')}>
-                <h1 className={cn('text-5xl lg:text-8xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
+            <div className={cn("text-yellow-400 max-h-[500px] overflow-scroll px-10 subpixel-antialiased duration-500 py-52", isPerspective && 'perspective')}>
+                <h1 className={cn('text-5xl md:text-8xl text-center mb-5', star_wars_font.className)}>ichsan Seanaldi</h1>
                 {
                     isPerspective &&
                     <div>
@@ -74,30 +74,35 @@ export default function Main() {
                     </div>
                 }
             </div>
-            <Button
-                onClick={() => setIsPerspective(prev => !prev)}
-                className={cn(
-                    'flex items-center  mx-auto rounded-sm text-xs group space-x-3 bg-transparent border-2 border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
-                    isPerspective ? 'w-0 p-0 rotate-90 opacity-80' : 'w-[150px]'
-                )}
-            >
-                <span className={cn('duration-300', isPerspective ? 'opacity-0 invisible ' : 'opacity-100')}>Read More</span>
-                <div className={cn('overflow-hidden max-w-[30px]')}>
-                    <div className='flex space-x-4 group-hover:translate-x-0 -translate-x-10 duration-300'>
-                        <RocketIcon className='ml-2 rotate-45 min-w-[20px]' />
-                        <RocketIcon className='ml-2 rotate-45 min-w-[20px]' />
-                    </div>
-                </div>
-            </Button>
             {
-                !isPerspective &&
-                <div className="fixed p-3 rounded-sm bottom-10 bg-black space-y-0 space-x-3 flex h-min">
+
+                <div className='fixed bottom-5 '>
+                    <Button
+                        onClick={() => setIsPerspective(prev => !prev)}
+                        className={cn(
+                            'flex items-center  mx-auto rounded-sm text-xs group space-x-3 bg-transparent border-2 border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
+                            isPerspective ? 'w-0 p-0 rotate-90' : 'w-[150px]'
+                        )}
+                    >
+                        <span className={cn('duration-300', isPerspective ? 'opacity-0 invisible ' : 'opacity-100')}>About Me</span>
+                        <div className={cn('overflow-hidden max-w-[34px]')}>
+                            <div className='flex space-x-4 group-hover:translate-x-0 -translate-x-10 duration-300'>
+                                <RocketIcon className='ml-2 rotate-45 min-w-[20px]' />
+                                <RocketIcon className='ml-2 rotate-45 min-w-[20px]' />
+                            </div>
+                        </div>
+                    </Button>
                     {
-                        social_media.map((sm, i) => (
-                            <Link href={sm.url} target="_blank" className="group" key={i}>
-                                <div dangerouslySetInnerHTML={{ __html: sm.svg }} className="fill-white group-hover:fill-yellow-500 duration-200"></div>
-                            </Link>
-                        ))
+                        !isPerspective &&
+                        <div className=" p-3 rounded-sm  bg-black space-y-0 space-x-3 flex h-min">
+                            {
+                                social_media.map((sm, i) => (
+                                    <Link href={sm.url} target="_blank" className="group" key={i}>
+                                        <div dangerouslySetInnerHTML={{ __html: sm.svg }} className="fill-white group-hover:fill-yellow-500 duration-200"></div>
+                                    </Link>
+                                ))
+                            }
+                        </div>
                     }
                 </div>
             }

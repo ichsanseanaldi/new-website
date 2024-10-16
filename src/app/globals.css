@@ -78,17 +78,6 @@
 }
 
 .perspective{
-  transform:perspective(400px) rotatex(40deg);
+  transform:perspective(300px) rotateX(30deg);
 }
 
-@media only screen and (max-width: 705px) {
-  .perspective{
-    transform:perspective(300px) rotatex(20deg);
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  .perspective{
-    transform:perspective(600px) rotatex(10deg);
-  }
-}

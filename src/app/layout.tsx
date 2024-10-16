@@ -26,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" dir='ltr'>
-      <body className={`flex justify-between min-h-dvh w-full max-w-[1000px] mx-auto bg-black ${inter.className} p-10`}>
+      <body className={`flex justify-between min-h-dvh w-full max-w-[1000px] mx-auto bg-black overflow-y-hidden ${inter.className} p-10`}>
         {/* <Analytics/> */}
         <div className='w-full'>
           {children}
