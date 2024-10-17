@@ -1,13 +1,13 @@
 "use client"
 
-import React, { LegacyRef, MutableRefObject, RefObject, useRef, useState } from 'react'
+import React, { LegacyRef, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react'
 import { social_media } from "@/addons/social";
 import Link from "next/link";
 import { SparklesCore } from './ui/sparkles';
 import localFont from 'next/font/local'
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
-import { PlayIcon, RocketIcon, XIcon } from 'lucide-react';
+import { PlayIcon, RocketIcon, SquareIcon, XIcon } from 'lucide-react';
 import gsap, { TweenLite } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -20,21 +20,41 @@ const star_wars_font = localFont({
 gsap.registerPlugin(useGSAP)
 
 export default function Main() {
-    const [isPerspective, setIsPerspective] = useState<boolean>(false)
 
+    const [containerWidth, setContainerWidth] = useState<number | null>()
+    let gsap_timeline = useRef(gsap.timeline());
     const container = useRef<HTMLDivElement | null>(null)
+    const perspectived = useRef<HTMLDivElement | null>(null)
     const heading = useRef<HTMLHeadingElement | null>(null)
     const headingwrapper = useRef<HTMLDivElement | null>(null)
     const paragraphwrapper = useRef<HTMLDivElement | null>(null)
     const button = useRef<HTMLButtonElement | null>(null)
     const linkwrapper = useRef<HTMLDivElement | null>(null)
 
+    useEffect(() => {
+
+        const handleResize = () => {
+            const currentWidth = window.innerWidth;
+            setContainerWidth(currentWidth);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, [])
+
     const { contextSafe } = useGSAP({ scope: container })
 
     const handleClick = contextSafe(() => {
-        if (container.current && heading.current) {
 
-            const timeline = gsap.timeline();
+        if (perspectived.current && heading.current && containerWidth) {
+
+            const timeline = gsap_timeline.current
 
             timeline.to(button.current, {
                 rotate: '90deg',
@@ -49,7 +69,7 @@ export default function Main() {
                 })
 
                 .to(linkwrapper.current, {
-                    translateY:'150px',
+                    translateY: '150px',
                     ease: 'power2.out'
                 })
 
@@ -59,7 +79,7 @@ export default function Main() {
                     },
                     {
                         display: 'block',
-                        y: '-100%',
+                        y: containerWidth > 800 ? '-97%' : containerWidth > 700 ? '-89%' : containerWidth > 570 ? '-82%' : containerWidth > 500 ? '-78%' : containerWidth > 400 ? '-74%' : '-72%',
                         duration: 80,
                     }, '>')
 
@@ -69,7 +89,7 @@ export default function Main() {
 
                 .to(headingwrapper.current, {
                     opacity: 1,
-                    duration: 2,
+                    duration: 1,
                     ease: 'power2.in'
                 }, '>')
 
@@ -78,39 +98,38 @@ export default function Main() {
                     width: '150px',
                     padding: '0.5rem 1rem',
                     duration: 0.2
-                },'>')
+                }, '>')
 
                 .to(linkwrapper.current, {
-                    translateY:'0px',
+                    translateY: '0px',
                     ease: 'power2.out',
                     duration: 1
-                },'>')
+                })
 
 
         }
     })
 
     return (
-        <div className={cn("  flex items-center flex-col justify-start lg:my-2 select-none mx-auto relative")}>
+        <div className={cn("  flex items-center flex-col justify-start lg:my-2 select-none mx-auto relative")} ref={container}>
             <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
                 minSize={0.5}
                 maxSize={1}
-                particleDensity={50}
+                particleDensity={100}
                 className="w-full h-full fixed inset-0 z-[-1]"
                 particleColor="#FFFFFF"
             />
-            <div ref={container} className={cn(" perspective text-yellow-400 max-h-[500px] overflow-hidden px-10 subpixel-antialiased duration-500 flex items-center flex-col justify-center h-full")}>
+            <div ref={perspectived} className={cn("perspective text-yellow-400 max-h-[500px] overflow-hidden px-10 subpixel-antialiased duration-500 flex items-center flex-col justify-center h-full")}>
                 <div ref={headingwrapper}>
                     <h1 ref={heading} className={cn('text-5xl sm:text-6xl md:text-9xl text-center mb-5 ', star_wars_font.className)}>ichsan
-                    <br /> Seanaldi</h1>
+                        <br /> Seanaldi</h1>
                     <Button
                         ref={button}
                         onClick={handleClick}
                         className={cn(
-                            'flex items-center  mx-auto rounded-lg text-xs group space-x-3 w-[150px] bg-transparent border-4 border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
-                            isPerspective ? 'w-0 p-0 rotate-90' : ''
+                            'flex items-center  mx-auto rounded-lg text-xs group space-x-3 w-[150px] bg-transparent border-2 sm:border-[3px] border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
                         )}
                     >
                         <PlayIcon strokeWidth={3} />
