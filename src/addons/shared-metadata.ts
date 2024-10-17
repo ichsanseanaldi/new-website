@@ -22,11 +22,11 @@ export const shared_metadata: Metadata = {
   creator: "Ichsan Seanaldi Permana",
   robots: "index, follow",
   alternates: {
-    canonical: "https://ichsanseanaldi.vercel.app",
+    canonical: "https://ichsvn.com",
   },
   openGraph: {
     type: "website",
-    url: "https://ichsanseanaldi.vercel.app",
+    url: "https://ichsvn.com",
     title: "Ichsan Seanaldi Permana | Personal Website",
     description:
       "Ichsan Seanaldi Permana Personal Website, built entirely with Next.js, hosted in Vercel",
