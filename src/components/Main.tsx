@@ -57,9 +57,10 @@ export default function Main() {
             const timeline = gsap_timeline.current
 
             timeline.to(button.current, {
-                rotate: '90deg',
                 width: '0px',
+                height: '0px',
                 padding: '0px',
+                opacity: 0,
                 duration: 0.2
             })
 
@@ -75,12 +76,12 @@ export default function Main() {
 
                 .fromTo(paragraphwrapper.current,
                     {
-                        y: '70%'
+                        y: '70%',
                     },
                     {
                         display: 'block',
-                        y: containerWidth > 800 ? '-97%' : containerWidth > 700 ? '-89%' : containerWidth > 570 ? '-82%' : containerWidth > 500 ? '-78%' : containerWidth > 400 ? '-74%' : '-72%',
-                        duration: 80,
+                        y: containerWidth > 800 ? '-96.5%' : containerWidth > 700 ? '-88.5%' : containerWidth > 570 ? '-82%' : containerWidth > 500 ? '-78%' : containerWidth > 400 ? '-74%' : '-72%',
+                        duration: 85,
                     }, '>')
 
                 .to(paragraphwrapper.current, {
@@ -94,8 +95,9 @@ export default function Main() {
                 }, '>')
 
                 .to(button.current, {
-                    rotate: '0deg',
+                    height: '40px',
                     width: '150px',
+                    opacity: 1,
                     padding: '0.5rem 1rem',
                     duration: 0.2
                 }, '>')
@@ -129,7 +131,7 @@ export default function Main() {
                         ref={button}
                         onClick={handleClick}
                         className={cn(
-                            'flex items-center  mx-auto rounded-lg text-xs group space-x-3 w-[150px] bg-transparent border-2 sm:border-[3px] border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
+                            'flex items-center  mx-auto rounded-lg text-xs group space-x-3 w-[150px] h-[40px] bg-transparent border-2 sm:border-[3px] border-yellow-400 text-yellow-400 duration-300 transition-all relative z-50',
                         )}
                     >
                         <PlayIcon strokeWidth={3} />
@@ -137,7 +139,7 @@ export default function Main() {
                 </div>
                 <div className='hidden max-w-[500px] ' ref={paragraphwrapper}>
                     <p className='text-start md:text-justify'>
-                        An agnostic-stack software developer is I am, Well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it, just like how a Jedi embraces the Force.
+                        I am an agnostic-stack software developer, Well, kind of... because most of the time I focus on frontend development, which technically makes me a Frontend Developer. But since &ldquo;agnostic-stack&ldquo; has a nice ring to it, I decided to embrace it, just like how a Jedi embraces the Force.
                     </p>
                     <br />
                     <p className='text-start md:text-justify'>

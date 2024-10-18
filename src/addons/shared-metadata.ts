@@ -9,13 +9,14 @@ export const shared_metadata: Metadata = {
       url: "https://linkedin.com/in/ichsan-seanaldi",
     },
   ],
-  publisher: "Vercel",
+  publisher: "Ichsan Seanaldi",
   keywords: [
     "Ichsan Seanaldi Permana",
     "Portfolio Website",
     "Personal Website",
     "Next.js",
-    "Vercel",
+    "Ichsan",
+    "Ichsan Seanaldi",
     "Apps",
   ],
   referrer: "origin",
@@ -29,7 +30,7 @@ export const shared_metadata: Metadata = {
     url: "https://ichsvn.com",
     title: "Ichsan Seanaldi Permana | Personal Website",
     description:
-      "Ichsan Seanaldi Permana Personal Website, built entirely with Next.js, hosted in Vercel",
+      "Ichsan Seanaldi Permana Personal Website",
     siteName: "Ichsan Seanaldi Permana | Personal Website",
   },
   verification: {
